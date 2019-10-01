@@ -16,7 +16,7 @@ Movie.create!([
     cast: "Robert Downey Jr., Gwyneth Paltrow and Terrence Howard",
     director: "Jon Favreau",
     duration: "2 hours 6 minutes",
-    image_file_name: "iron_man.jpg"
+    image_file_name: "ironman.jpg"
   },
   {
     title: "Iron Man 2",
@@ -27,7 +27,7 @@ Movie.create!([
     cast: "Robert Downey Jr, Gwyneth Paltrow",
     director: "Jon Favreau",
     duration: "2 hours 4 minutes",
-    image_file_name: "iron_man_2.jpg"
+    image_file_name: "ironman2.jpg"
   },
   {
     title: "Thor",
@@ -38,7 +38,7 @@ Movie.create!([
     cast: "Chris Hemsworth, Natalie Portman",
     director: "Kenneth Branagh",
     duration: "1 hour 55 minutes",
-    image_file_name: "thor.jpg"
+    image_file_name: ""
   },
   {
     title: "Captain America: The First Avenger",
@@ -49,7 +49,7 @@ Movie.create!([
     cast: "Chris Evans",
     director: "Joe Johnston",
     duration: "2 hours 4 minutes",
-    image_file_name: "captain_america.jpg"
+    image_file_name: ""
   },
   {
     title: "Marvel's The Avengers",
@@ -60,6 +60,6 @@ Movie.create!([
     cast: "Robert Downey Jr, Chris Evans, Chris Hemsworth, Scarlett Johhannsen",
     director: "Joss Whedon",
     duration: "2 hours 23 minutes",
-    image_file_name: "the_avengers.jpg"
+    image_file_name: "avengers.jpg"
   }
 ])
