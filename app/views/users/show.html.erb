@@ -1,7 +1,9 @@
 <article id="user">
   <header>
-    <h1><%= @user.name %></h1>
+    <h1><%= @user.username %></h1>
+    <p>Member Since: <%= @user.created_at.strftime("%B %Y")%></p>
     <h2><%= mail_to(@user.email) %></h2>
+    <h2>Name: <%= @user.name %></h2>
   </header>
 
   <footer>
