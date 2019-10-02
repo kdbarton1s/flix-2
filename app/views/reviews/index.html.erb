@@ -1,5 +1,5 @@
 <header id="content-header">
-  <h1>Reviews for <%= link_to(@movie.title, @movie) %></h2>
+  <h2>Reviews for <%= link_to(@movie.title, @movie) %></h2>
 </header>
 
 <ol id="reviews">
@@ -10,7 +10,7 @@
       <span class="date"><%= time_ago_in_words(review.created_at) %> ago</span>
       <%= link_to delete_review_image, [@movie, review],
                   id: "#{dom_id(review)}_delete",
-                  method: :delete, 
+                  method: :delete,
                   data: { confirm: 'Are you sure?' } %>
       <p>
         &quot;<%= review.comment %>&quot;
