@@ -2,8 +2,8 @@
 
 body {
   color: $primary-text-color;
-  background-image: image-url("background.jpg");
-  font-family: "Helvetica Neue", Helvetica, Arial;
+  font-family: 'Roboto', sans-serif;
+
 }
 
 header#page-header {
@@ -64,8 +64,10 @@ header#page-header {
 }
 
 footer#page-footer {
-  color: $secondary-text-color;
+  color: white;
   padding: 20px 25px;
+  background-color: $secondary-background-color;
+  border-top: 5px solid darken($secondary-background-color, 20%);
 
   p {
     text-align: center;
