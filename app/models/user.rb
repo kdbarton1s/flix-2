@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_secure_password
 
+  has_many :reviews, dependent: :destroy 
+
   validates :password, length: { minimum: 8, allow_blank: true }
 
   validates :name, presence: true
