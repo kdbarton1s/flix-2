@@ -118,7 +118,7 @@ ul#movies {
 
     footer {
       font-size: 110%;
-      font-weight: bold;
+      font-weight: 400;
       text-align: center;
       margin-top: 1em;
     }
@@ -166,7 +166,7 @@ ol#reviews {
 
     span {
       &.review {
-        font-weight: bold;
+        font-weight: 400;
       }
       &.user {
         font-size: .9em;
@@ -175,7 +175,7 @@ ol#reviews {
       }
       &.date {
         font-size: .8em;
-        font-weight: bold;
+        font-weight: 400;
         color: $secondary-text-color;
       }
     }
@@ -249,6 +249,6 @@ section#errors {
   h3 {
     font-size: 1em;
     margin: .5em 0;
-    font-weight: bold;
+    font-weight: 400;
   }
 }

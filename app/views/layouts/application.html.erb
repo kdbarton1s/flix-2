@@ -6,7 +6,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:700&display=swap" rel="stylesheet">
+
 
   </head>
 
@@ -18,9 +19,6 @@
       <%= render "layouts/flashes" %>
 
       <div id="container">
-        <section id="sidebar">
-          <%= render "layouts/sidebar" %>
-        </section>
         <section id="content">
           <%= yield %>
         </section>

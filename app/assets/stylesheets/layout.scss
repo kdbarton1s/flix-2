@@ -9,6 +9,7 @@ body {
 header#page-header {
   background-color: $secondary-background-color;
   padding: 0px 25px;
+  border-bottom: 5px solid darken($secondary-background-color, 20%);
 
   h1 a {
     height: 0px;
@@ -18,7 +19,6 @@ header#page-header {
     color: #fff;
     text-decoration: none;
     overflow: hidden;
-    background: image-url("logo.png") no-repeat 0 0;
   }
 
   a.button {
@@ -85,7 +85,9 @@ footer#page-footer {
 }
 
 div#wrapper {
-  background: #fff;
+  background: #E0EAFC;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   padding: 10px;
   min-height: 400px;
   overflow: hidden;
