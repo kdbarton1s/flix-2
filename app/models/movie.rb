@@ -1,5 +1,12 @@
 class Movie < ApplicationRecord
-  validates :title, :released_on, :duration, presence: true
+
+  before_validation :generate_slug
+  
+  validates :released_on, :duration, presence: true
+
+  validates :title, presence: true, uniqueness: true
+
+  validates :slug, uniqueness: true
 
   validates :description, length: { minimum: 25 }
 
@@ -24,17 +31,18 @@ class Movie < ApplicationRecord
 
   has_many :genres, through: :characterizations
 
-  def self.released
-    where("released_on <= ?", Time.now).order("released_on desc")
-  end
+  scope :released, -> { where("released_on <= ?", Time.now).order("released_on desc") }
 
-  def self.hits
-    where('total_gross >= 300000000').order(total_gross: :desc)
-  end
+  scope :hits, -> { released.where('total_gross >= 300000000').order(total_gross: :desc) }
 
-  def self.flops
-    where('total_gross < 50000000').order(total_gross: :asc)
-  end
+  scope :flops, -> { released.where('total_gross < 50000000').order(total_gross: :asc) }
+
+  scope :upcoming, -> { where("released_on > ?", Time.now).order("released_on asc") }
+
+  scope :rated, ->(rating) { released.where(rating: rating) }
+
+  scope :recent, ->(number=5) { released.limit(number) }
+
 
   def self.recently_added
     order('created_at desc').limit(3)
@@ -50,5 +58,13 @@ class Movie < ApplicationRecord
 
   def recent_reviews
     reviews.order('created_at desc').limit(2)
+  end
+
+  def generate_slug
+    self.slug ||= title.parameterize if title
+  end
+
+  def to_param
+    slug
   end
 end
