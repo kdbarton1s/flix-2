@@ -1,7 +1,7 @@
 class Movie < ApplicationRecord
 
   before_validation :generate_slug
-  
+
   validates :released_on, :duration, presence: true
 
   validates :title, presence: true, uniqueness: true
@@ -42,6 +42,8 @@ class Movie < ApplicationRecord
   scope :rated, ->(rating) { released.where(rating: rating) }
 
   scope :recent, ->(number=5) { released.limit(number) }
+
+  scope :chronological, -> { order(set_in: :asc) }
 
 
   def self.recently_added

@@ -2,6 +2,7 @@
   <nav>
     <ul>
       <li class = "movies"><%= nav_link_to 'Released', movies_path %></li>
+      <li class="movies"><%= nav_link_to 'Chronological Order', filtered_movies_path(:chronological) %></li>
       <li class="movies"><%= nav_link_to 'Recent', filtered_movies_path(:recent) %></li>
       <li class="movies"><%= nav_link_to 'Upcoming', filtered_movies_path(:upcoming) %></li>
       <li class = "movies"><%= nav_link_to 'Hit Movies', filtered_movies_path(:hits) %></li>

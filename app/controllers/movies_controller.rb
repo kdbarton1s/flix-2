@@ -14,6 +14,8 @@ class MoviesController < ApplicationController
       @movies = Movie.upcoming
     when 'recent'
       @movies = Movie.recent(3)
+    when 'chronological'
+      @movies = Movie.chronological
     else
       @movies = Movie.released
     end
@@ -28,7 +30,7 @@ class MoviesController < ApplicationController
   end
 
   def edit
-    
+
   end
 
   def update
@@ -61,7 +63,7 @@ private
 
   def movie_params
     params.require(:movie).
-      permit(:title, :description, :rating, :released_on, :total_gross, :cast, :director, :duration, :image_file_name, genre_ids: [])
+      permit(:title, :description, :rating, :released_on, :total_gross, :cast, :director, :duration, :image_file_name, :set_in, genre_ids: [])
   end
 
   def set_movie
